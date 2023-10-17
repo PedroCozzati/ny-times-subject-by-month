@@ -1,0 +1,21 @@
+# swagger.yml
+
+openapi: 3.0.0
+info:
+  title: "Flask REST API"
+  description: "NY Times most frequent subjects on each month by year"
+  version: "1.0.0"
+
+servers:
+  - url: "/api"
+
+paths:
+  /subjects:
+    get:
+      operationId: "subjects.read_all"
+      tags:
+        - "Subjects"
+      summary: "Read the list of most frequent subjects by year"
+      responses:
+        "200":
+          description: "Successfully read subject list"
