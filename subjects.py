@@ -9,7 +9,6 @@ from flask import Flask, render_template, request
 request_http = requests
 api_key="Insira a sua api key aqui, você pode obtê-la no site:  https://developer.nytimes.com/docs/archive-product/1/overview" 
 
-year_keyword_list = []
 
 def getDataFromNYT(month,year):
     url = "https://api.nytimes.com/svc/archive/v1/"+ year +"/" + month +".json?api-key="+api_key
@@ -40,12 +39,17 @@ def read_all():
     kw = []
     data={}
     dict=[]
+    final_json={}
+    year_keyword_list = []
+    f_json={}
+    
     
     count=count+1
     
     data = getDataFromNYT(month,year)  
   
-    # time.sleep(1)
+    #Apenas para evitar rate limit da api que fornece os dados
+    time.sleep(1)
     
     obj = filterData(data,month)
     
@@ -65,6 +69,7 @@ def read_all():
     c = Counter(year_keyword_list)
     most_frequent_subjects = c.most_common(20)
     i = 0
+    
     for item in most_frequent_subjects:
         dict.append({
             "subject":item[0],
@@ -78,5 +83,6 @@ def read_all():
     f_json = final_json
 
     return list(f_json.values())
+
     
     
