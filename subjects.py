@@ -1,5 +1,3 @@
-import json
-import pandas as p
 import requests 
 import time
 from collections import Counter
@@ -7,11 +5,9 @@ from datetime import datetime
 from flask import Flask, render_template, request
 
 request_http = requests
-api_key="Insira a sua api key aqui, você pode obtê-la no site:  https://developer.nytimes.com/docs/archive-product/1/overview" 
 
-
-def getDataFromNYT(month,year):
-    url = "https://api.nytimes.com/svc/archive/v1/"+ year +"/" + month +".json?api-key="+api_key
+def getDataFromNYT(month,year,key):
+    url = "https://api.nytimes.com/svc/archive/v1/"+ year +"/" + month +".json?api-key="+key
 
     getDataFromNYT = request_http.get(url) 
     jsonData = getDataFromNYT.json()
@@ -34,6 +30,7 @@ def read_all():
     args = request.args
     year = args.get('year')
     month = args.get('month')
+    key = args.get('key')
     
     count = 0
     kw = []
@@ -46,7 +43,7 @@ def read_all():
     
     count=count+1
     
-    data = getDataFromNYT(month,year)  
+    data = getDataFromNYT(month,year,key)  
   
     #Apenas para evitar rate limit da api que fornece os dados
     time.sleep(1)
