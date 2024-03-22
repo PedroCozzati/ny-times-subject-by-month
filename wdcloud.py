@@ -1,13 +1,5 @@
-from collections import Counter
 import os
-import re
 from flask.cli import load_dotenv
-import streamlit as st
-import pandas as pd
-import numpy as np
-import sqlite3
-import altair as alt
-from matplotlib.animation import FuncAnimation
 import streamlit as st
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
