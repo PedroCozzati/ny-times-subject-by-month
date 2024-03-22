@@ -81,8 +81,10 @@ Para o projeto, foi utilizado:
 ## Screenshots
 
 Wordcloud no Streamlit:
+
 ![image](https://github.com/PedroCozzati/ny-times-subject-by-month/assets/80106385/ee03ec38-be03-4e8d-ba9e-f89d21148634)
 
 Resultado da API:
+
 ![image](https://github.com/PedroCozzati/python-engdados/assets/80106385/a08cb0da-f015-4e14-a84e-f060c223afd5)
 
