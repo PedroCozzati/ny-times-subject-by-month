@@ -14,6 +14,9 @@ st.set_page_config(
 
 key = os.getenv("key")
 
+st.title("WORDCLOUD - Assuntos mais frequentes em artigos do New York Times")
+st.subheader("Utilizando a API do NY Times, criei uma api que manipula esses dados e retorna os assuntos mais comentados de um determinado mês. O que é perfeito para criar uma nuvem de palavras (Wordcloud)")
+
 @st.cache_data 
 def fetch_data(month, year, key):
     url = f"https://pedrocozzati.pythonanywhere.com/subjects?month={month}&year={year}&key={key}"
