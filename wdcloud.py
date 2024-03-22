@@ -7,7 +7,7 @@ import requests
 
 load_dotenv()
 st.set_page_config(
-    page_title="Análise de dados de vagas do linkedin",  # Title of your app
+    page_title="Assuntos mais frequentes em artigos do New York Times",  # Title of your app
     page_icon=":chart_with_upwards_trend:",  # Icon for your app
     layout="centered",  # Layout mode ("wide" or "centered")
 )
@@ -29,9 +29,9 @@ def fetch_data(month, year, key):
 
 
 form = st.form(key="my_form")
-month = form.text_input(label="Digite um mês e aperte Enter (1-12)")
-year = form.text_input(label="Digite um ano e aperte Enter")
-submit_button = form.form_submit_button(label="Submit")
+month = form.text_input(label="Digite um mês (entre 1-12)")
+year = form.text_input(label="Digite um ano")
+submit_button = form.form_submit_button(label="Enviar")
 
 if submit_button:
     jsonData = fetch_data(month, year, key)
