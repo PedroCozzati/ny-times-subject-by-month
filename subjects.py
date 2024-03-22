@@ -64,7 +64,7 @@ def read_all():
                     year_keyword_list.append(word['value'])
     
     c = Counter(year_keyword_list)
-    most_frequent_subjects = c.most_common(20)
+    most_frequent_subjects = c.most_common(40)
     i = 0
     
     for item in most_frequent_subjects:
