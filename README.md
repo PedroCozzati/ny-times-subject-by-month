@@ -44,6 +44,10 @@ API hospedada
   https://pedrocozzati.pythonanywhere.com/subjects?month={mes}&year={ano}&key={sua-chave-nytimes}
 ```
 
+## Autores
+
+- [@PedroCozzati](https://www.github.com/PedroCozzati)
+
 
 ## Documentação técnica
 
